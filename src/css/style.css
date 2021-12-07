@@ -1,4 +1,5 @@
 @import "reset.css";
+@import "custom.css";
 @import "http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css";
 
 *, *:before, *:after {
@@ -102,9 +103,7 @@ body {
 }
 
 #container .list-view ul li {
-  position: absolute;
-  left: 0;
-  right: 0;
+  position: relative;
   height: 70px;
   border-bottom: 1px solid #dddddd;
   -webkit-transition: opacity 0.3s 0.3s, border-color 0.3s 0.3s, -webkit-transform 0.3s;
@@ -113,59 +112,16 @@ body {
   transition: transform 0.3s, opacity 0.3s 0.3s, border-color 0.3s 0.3s, -webkit-transform 0.3s;
 }
 
+#container .list-view ul li.active {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+}
+
 #container .list-view ul li strong {
   -webkit-font-smoothing: antialiased;
   font-weight: normal;
-}
-
-#container .list-view ul li:nth-child(1) {
-  -webkit-transform: translate3d(0, 0px, 0);
-          transform: translate3d(0, 0px, 0);
-}
-
-#container .list-view ul li:nth-child(2) {
-  -webkit-transform: translate3d(0, 70px, 0);
-          transform: translate3d(0, 70px, 0);
-}
-
-#container .list-view ul li:nth-child(3) {
-  -webkit-transform: translate3d(0, 140px, 0);
-          transform: translate3d(0, 140px, 0);
-}
-
-#container .list-view ul li:nth-child(4) {
-  -webkit-transform: translate3d(0, 210px, 0);
-          transform: translate3d(0, 210px, 0);
-}
-
-#container .list-view ul li:nth-child(5) {
-  -webkit-transform: translate3d(0, 280px, 0);
-          transform: translate3d(0, 280px, 0);
-}
-
-#container .list-view ul li:nth-child(6) {
-  -webkit-transform: translate3d(0, 350px, 0);
-          transform: translate3d(0, 350px, 0);
-}
-
-#container .list-view ul li:nth-child(7) {
-  -webkit-transform: translate3d(0, 420px, 0);
-          transform: translate3d(0, 420px, 0);
-}
-
-#container .list-view ul li:nth-child(8) {
-  -webkit-transform: translate3d(0, 490px, 0);
-          transform: translate3d(0, 490px, 0);
-}
-
-#container .list-view ul li:nth-child(9) {
-  -webkit-transform: translate3d(0, 560px, 0);
-          transform: translate3d(0, 560px, 0);
-}
-
-#container .list-view ul li:nth-child(10) {
-  -webkit-transform: translate3d(0, 630px, 0);
-          transform: translate3d(0, 630px, 0);
 }
 
 #container .list-view ul li:hover {
