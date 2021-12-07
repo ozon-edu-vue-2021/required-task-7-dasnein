@@ -1,10 +1,13 @@
 import renderUsersList from './renderUsersList';
+import state from './state';
 
 export default async function () {
   const response = await fetch('/data.json');
   const data = await response.json();
 
-  console.log(data);
+  state.users = data;
+  renderUsersList();
 
-  renderUsersList(data);
+  console.log(data);
+  console.log(state.popular);
 }

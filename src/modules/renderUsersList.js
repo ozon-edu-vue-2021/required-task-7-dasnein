@@ -2,8 +2,10 @@ import showUserInfo from './showUserInfo';
 import { contactsList, detailsView } from './elements';
 import state from './state';
 
-function renderUsersList(data) {
-  for (const user of data) {
+function renderUsersList() {
+  const { users } = state;
+
+  for (const user of users) {
     const listElement = document.createElement('li');
 
     listElement.innerHTML = `<strong>${user.name}</strong>`;
@@ -13,7 +15,7 @@ function renderUsersList(data) {
       e.preventDefault();
 
       state.scroll = window.scrollY;
-      
+
       this.classList.add('active');
       showUserInfo(user);
 
