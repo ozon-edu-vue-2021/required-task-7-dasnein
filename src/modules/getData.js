@@ -7,7 +7,4 @@ export default async function () {
 
   state.users = data;
   renderUsersList();
-
-  console.log(data);
-  console.log(state.popular);
 }

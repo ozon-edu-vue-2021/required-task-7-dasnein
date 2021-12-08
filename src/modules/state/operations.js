@@ -1,7 +1,6 @@
 import state from './index';
 
 export function buildPopularUsersList() {
-  console.log('buildPopularUsersList');
   const allUsersList = state.users.flatMap((user) => user.friends);
   const popularityMap = allUsersList.reduce((acc, id) => {
     return Object.assign({}, acc, {
@@ -21,5 +20,5 @@ export function buildPopularUsersList() {
     return b.popularity - a.popularity;
   });
 
-  state.popular = sortedByPopularity.slice(0, 3);
+  return sortedByPopularity.slice(0, 3);
 }

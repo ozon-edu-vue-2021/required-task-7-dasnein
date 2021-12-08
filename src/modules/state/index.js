@@ -6,16 +6,15 @@ const state = {
   users: [],
 };
 
-Object.defineProperty(state, 'popular', {
-  get() {
-    if (this._popular.length === 0) {
-      buildPopularUsersList();
-    }
+Object.defineProperties(state, {
+  popular: {
+    get() {
+      if (this._popular.length === 0) {
+        this._popular = buildPopularUsersList();
+      }
 
-    return this._popular;
-  },
-  set(val) {
-    this._popular = val;
+      return this._popular;
+    },
   },
 });
 
